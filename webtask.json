@@ -1,0 +1,45 @@
+{
+  "title": "Captcha Extension",
+  "name": "captcha-extension",
+  "version": "1.0.0",
+  "author": "abhishek.hingikar@auth0.com",
+  "description": "An extension that uses Google's reCaptcha",
+  "type": "application",
+  "keywords": [
+    "auth0"
+  ],
+  "auth0": {
+    "createClient": true,
+    "scopes": "create:rules read:rules delete:rules read:logs read:users",
+    "onInstallPath": "/.extensions/on-install",
+    "onUninstallPath": "/.extensions/on-uninstall",
+    "onUpdatePath": "/.extensions/on-update"
+  },
+  "secrets": {
+    "CAPTCHA_SITEKEY": {
+      "description": "The google recaptcha sitekey, If you don't have one please generate one at https://www.google.com/recaptcha/"
+    },
+    "CAPTCHA_SECRET": {
+      "description": "The google recaptcha api secret, If you don't have one please generate one at https://www.google.com/recaptcha/",
+      "type": "password"
+    },
+    "STYLES": {
+      "description": "Any custom styles you to be added to the head of the page use this to customize the look and feel of your website, if you want to use external stylesheets please consider using `@import` instead",
+      "default": "html{}"
+    },
+    "CAPTCHA_MESSAGE": {
+      "description": "The message you want to be displayed to the user on captcha page",
+      "default": "Please verify that you are a human being."
+
+    },
+    "MAX_ALLOWED_FAILED_ATTEMPTS":{
+      "description": "Maximum allowed failed login attempts, beyond this the captcha will start showing, 0 means the dialog will always popup",
+      "type": "text",
+      "default": "3"
+    },
+    "CAPTCHA_TITLE": {
+      "description": "The title you want to be displayed on the user captcha page",
+      "default": "Humanity Verification Required"
+    }
+  }
+}
